@@ -1,0 +1,16 @@
+{
+  "name": "squarecue",
+  "version": "1.0.0",
+  "description": "Style square dance cue sheets",
+  "main": "index.js",
+  "scripts": {
+    "start": "sass --watch --no-source-map code/squarecue.scss code/squarecue.css",
+    "build": "sass --style=compressed --no-source-map code/squarecue.scss code/squarecue.css",
+    "deploy": "npm run build && cp -av index.html sheets code target/"
+  },
+  "author": "Adam Fanello",
+  "license": "MIT",
+  "dependencies": {
+    "sass": "^1.25.0"
+  }
+}

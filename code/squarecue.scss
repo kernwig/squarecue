@@ -1,0 +1,196 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+song {
+  font-size: 18px;
+  display: block;
+  margin: 10px 10px;
+
+  a {
+    padding-left: 1em;
+  }
+}
+
+opener, figure, figure1, figure2, figure12, middle, figure3, figure4, figure34, closer, tag {
+  font-size: 24px;
+  display: block;
+  margin: 58px 0 40px 0;
+
+  &:before {
+    font-size: 36px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    top: -18px;
+  }
+}
+
+opener:before {
+  content: "Opener";
+}
+
+figure:before {
+  content: "Figure";
+}
+
+figure1:before {
+  content: "Figure 1";
+}
+
+figure2:before {
+  content: "Figure 2";
+}
+
+figure12:before {
+  content: "Figure 1 & 2";
+}
+
+figure3:before {
+  content: "Figure 3";
+}
+
+figure4:before {
+  content: "Figure 4";
+}
+
+figure34:before {
+  content: "Figure 3 & 4";
+}
+
+middle:before {
+  content: "Middle";
+}
+
+closer:before {
+  content: "Closer";
+}
+
+tag:before {
+  content: "Tag";
+}
+
+br {
+  display: block;
+  height: 18px;
+  content: "";
+}
+
+m, m1, m2, m3, m4, m5, m6, m7, m8, m9, m17, m25, m33, m41, m49, m57 {
+  display: block;
+  line-height: 1.2em;
+  color: black;
+
+  &:before {
+    display: inline-block;
+    width: 24px;
+    font-size: 12px;
+    content: "";
+  }
+}
+
+m3, m5, m17, m33 {
+  padding-top: 18px;
+}
+
+m1:before {
+  content: "1";
+}
+
+m9:before, m2:before {
+  content: "9";
+}
+
+m17:before, m3:before {
+  content: "17";
+}
+
+m25:before, m4:before {
+  content: "25";
+}
+
+m33:before, m5:before {
+  content: "33";
+}
+
+m41:before, m6:before {
+  content: "41";
+}
+
+m49:before, m7:before {
+  content: "49";
+}
+
+m57:before, m8:before {
+  content: "57";
+}
+
+c, cue, Cue {
+  background-color: yellow;
+}
+
+Cue {
+  text-transform: capitalize;
+}
+
+body {
+  @each $level in abc, abca, abcb, abcc, basic, ms, plus, a1, a2 {
+
+    #{$level} {
+      display: none;
+    }
+
+
+    m[#{$level}],
+    m1[#{$level}],
+    m2[#{$level}],
+    m3[#{$level}],
+    m4[#{$level}],
+    m5[#{$level}],
+    m6[#{$level}],
+    m7[#{$level}],
+    m8[#{$level}],
+    m9[#{$level}],
+    m17[#{$level}],
+    m25[#{$level}],
+    m33[#{$level}],
+    m41[#{$level}],
+    m49[#{$level}],
+    m57[#{$level}] {
+      display: none;
+    }
+
+    &.#{$level} {
+      m[#{$level}],
+      m1[#{$level}],
+      m2[#{$level}],
+      m3[#{$level}],
+      m4[#{$level}],
+      m5[#{$level}],
+      m6[#{$level}],
+      m7[#{$level}],
+      m8[#{$level}],
+      m9[#{$level}],
+      m17[#{$level}],
+      m25[#{$level}],
+      m33[#{$level}],
+      m41[#{$level}],
+      m49[#{$level}],
+      m57[#{$level}] {
+        display: block;
+      }
+    }
+  }
+
+  &.abc abc,
+  &.abca abca,
+  &.abcb abcb,
+  &.abcc abcc,
+  &.basic basic,
+  &.ms ms,
+  &.plus plus,
+  &.a1 a1,
+  &.a2 a2 {
+    display: inline;
+  }
+}
