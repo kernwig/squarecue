@@ -1,3 +1,4 @@
+/* SquareCue by Adam Fanello - Copyright 2020 - GNU v3 licensed */
 var select = '<select id="dancelevel" onchange="document.body.className = this.value">';
 var levels = [
     {value: 'abc', display: 'ABC Core'},
