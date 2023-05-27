@@ -6,6 +6,7 @@ var levels = [
     {value: 'abcb', display: 'ABC B-Dance'},
     {value: 'abcc', display: 'ABC C-Dance'},
     {value: 'basic', display: 'Basic'},
+    {value: 'hc', display: 'Handicapable'},
     {value: 'ms', display: 'Mainstream'},
     {value: 'plus', display: 'Plus'},
     {value: 'a1', display: 'A1'},

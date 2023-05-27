@@ -108,11 +108,12 @@ These can be used as elemental blocks or attributes on a measure to indicate con
 given dance level. This allows one cue sheet to have different choreography for diffent dancers.
 
 The meaning of each:
-- `abc` - ABC Cor.
+- `abc` - ABC Common
 - `abca` - ABC A-dance
 - `abcb` - ABC B-Dance
 - `abcc` - ABC C-Dance
 - `basic` - Basic
+- `hc` - Handicapable
 - `ms` - Mainstream
 - `plus` - Plus
 - `a1` - A1
@@ -202,4 +203,3 @@ there about what you want to do. If we agree, you can proceed with a pull reques
 To contribute cue sheets for more songs, you may go straight to making a
 [pull request](https://github.com/kernwig/squarecue/pulls) with the addition. Don't forget
 to add the new song to [index.html](index.html).
- 

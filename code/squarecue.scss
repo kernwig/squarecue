@@ -136,7 +136,7 @@ Cue {
 }
 
 body {
-  @each $level in abc, abca, abcb, abcc, basic, ms, plus, a1, a2 {
+  @each $level in abc, abca, abcb, abcc, basic, hc, ms, plus, a1, a2 {
 
     #{$level} {
       display: none;
@@ -189,6 +189,7 @@ body {
   &.abcb abcb,
   &.abcc abcc,
   &.basic basic,
+  &.hc hc,
   &.ms ms,
   &.plus plus,
   &.a1 a1,
