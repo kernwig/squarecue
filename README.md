@@ -1,7 +1,7 @@
 # SquareCue
 
 by Adam Fanello -
-Copyright 2020 -
+Copyright 2020,2024 -
 [GNU v3 licensed](LICENSE)
 
 SquareCue is a simply a tool for writing square dance singing call cue sheets
@@ -102,7 +102,7 @@ within thus
 
 Will display <span style="background-color: yellow">`Sides Face, Grand Square`</span>
 
-#### abc abca abcb abcc basic ms plus a1 a2
+#### abc abca abcb abcc basic hc ms plus a1 a2
 
 These can be used as elemental blocks or attributes on a measure to indicate content to shown _only_ at the
 given dance level. This allows one cue sheet to have different choreography for diffent dancers.

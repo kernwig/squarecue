@@ -3,6 +3,30 @@
 body {
   font-family: Arial, sans-serif;
   background-color: white;
+  margin: 0 8px 8px 8px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  background-color: #eeeeee;
+  padding: 0.5em;
+
+  h1 {
+    margin-top: 0;
+  }
+}
+
+select, input, button {
+  margin-right: 1em;
+}
+button {
+  width: 5em;
+}
+
+input#bpm {
+  width: 4em;
 }
 
 song {
@@ -25,6 +49,14 @@ opener, figure, figure1, figure2, figure12, middle, figure3, figure4, figure34, 
     border-bottom: 1px solid #ccc;
     position: relative;
     top: -18px;
+  }
+
+  .track-here {
+    color: navy;
+    font-size: 10px;
+    position: relative;
+    top: -25px;
+    left: 20px;
   }
 }
 
@@ -89,10 +121,14 @@ m, m1, m2, m3, m4, m5, m6, m7, m8, m9, m17, m25, m33, m41, m49, m57 {
     font-size: 12px;
     content: "";
   }
+
+  &.highlight {
+    background-color: yellow;
+  }
 }
 
 m3, m5, m17, m33 {
-  padding-top: 18px;
+  margin-top: 18px;
 }
 
 m1:before {
@@ -128,7 +164,8 @@ m57:before, m8:before {
 }
 
 c, cue, Cue {
-  background-color: yellow;
+  background-color: cornsilk;
+  font-weight: bold;
 }
 
 Cue {
