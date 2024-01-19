@@ -4,10 +4,13 @@ by Adam Fanello -
 Copyright 2020,2024 -
 [GNU v3 licensed](LICENSE)
 
-SquareCue is a simply a tool for writing square dance singing call cue sheets
+SquareCue is a tool for writing square dance singing call cue sheets
 in HTML, in a way that removes duplicated effort and adds consistency.
 
-This is done simply with a CSS stylesheet and helper Javascript.
+**New!** Set the BPM and highlight measures in time with the music!
+
+This is done simply with a CSS stylesheet and some helper Javascript code,
+but you don't need to worry about that to use SquareCue.
 
 ## Features
 
