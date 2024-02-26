@@ -8,6 +8,7 @@ const levels = [
   {value: 'abcc', display: 'ABC C-Dance'},
   {value: 'basic', display: 'Basic'},
   {value: 'hc', display: 'Handicapable'},
+  {value: 'ssd', display: 'SSD'},
   {value: 'ms', display: 'Mainstream'},
   {value: 'plus', display: 'Plus'},
   {value: 'a1', display: 'A1'},
