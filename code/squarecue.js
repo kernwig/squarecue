@@ -1,6 +1,6 @@
 /* SquareCue by Adam Fanello - Copyright 2020,2024 - GNU v3 licensed */
 
-let select = 'Level: <select id="dancelevel" onchange="document.body.className = this.value">';
+let select = 'Level: <select id="dancelevel" onchange="selectLevel(this.value)">';
 const levels = [
   {value: 'abc', display: 'ABC Core'},
   {value: 'abca', display: 'ABC A-Dance'},
@@ -14,16 +14,26 @@ const levels = [
   {value: 'a1', display: 'A1'},
   {value: 'a2', display: 'A2/Advanced'},
 ];
+const levelToOptionIndex = {};
 let firstLevel = null;
+let levelCount = 0;
 for (let idx = 0; idx < levels.length; ++idx) {
   const level = levels[idx];
   const levelElements = document.getElementsByTagName(level.value);
   if (levelElements.length) {
     select += '<option value="' + level.value + '">' + level.display + '</option>';
     firstLevel = firstLevel || level.value;
+    levelToOptionIndex[level.value] = levelCount;
+    levelCount++;
   }
 }
 select += '</select>';
+
+function selectLevel(value) {
+  document.body.className = value;
+  document.getElementById('dancelevel').selectedIndex = levelToOptionIndex[value];
+  localStorage.setItem("level", value);
+}
 
 let defaultBpm = document.getElementsByTagName('bpm')[0];
 if (defaultBpm) {
@@ -40,15 +50,15 @@ const
     '<button id="resetTracking" onclick="javascript: resetTracking()">Reset</button>' +
     'Run time: <span id="clock">0:00</span>';
 
-if (firstLevel) {
+if (levelCount > 0) {
   let header = document.getElementsByTagName('header')[0];
   const h1 = document.createElement("h1");
   h1.textContent = header.textContent;
   header.textContent = "";
   header.appendChild(h1);
   header.insertAdjacentHTML('beforeend', select + trackHtml);
-  document.getElementById('dancelevel').selectedIndex = 0;
-  document.body.className = firstLevel;
+  const previousLevel = localStorage.getItem("level");
+  selectLevel(levelToOptionIndex[previousLevel] != undefined ? previousLevel : firstLevel);
 }
 
 // Tracking functionality
