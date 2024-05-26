@@ -2,5 +2,6 @@
 .idea
 node_modules
 package-lock.json
+scratch.txt
 target
 .DS_Store
