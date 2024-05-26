@@ -174,6 +174,17 @@ There are several different measure elements you can use in your cue sheet:
 Weather you use the single increment numbers or explicit beat number variant is up to you. If you have lines that
 don't match up properly to a beat mark, feel free to leave the beat mark off by using the generic `<m>`.
 
+When used within the special `<figure12>` or `<figure34>` block, you may also mark the measure
+with the specific `figure1`, `figure2`, `figure3` or `figure4` *attribute*. This will ensure that
+a measure only highlights on the particular measure during tracking. This is useful for the common
+case of singing on figure #3, but a call to launch into the closer on figure #4.
+Example:
+
+```html
+    <m8 figure3>(Figure 3) <lyric>Here on Gilligan's Isle</lyric></m8>
+    <m8 figure4>(Figure 4) <cue>Sides Face Grand Square</cue></m8>
+```
+
 ##### music
 
 Use the `music` attribute on measures that you want to highlight as musical.

@@ -73,6 +73,7 @@ const segmentNames = [
   ["closer"],
   ["tag"]
 ];
+const figureFilterNames = ["figure1","figure2","figure3","figure4"];
 const measureNames = [
   ["m1"],
   ["m2", "m9"],
@@ -181,8 +182,11 @@ function trackNextMeasure() {
 
   for (const segmentElement of document.querySelectorAll(segmentNames[segmentIdx].join(","))) {
     for (const measureElement of segmentElement.querySelectorAll(measureNames[measureIdx].join(","))) {
-      measureElement.classList.add(highlightClass);
-      currentHighlights.push(measureElement);
+      const filterOnFigure =getFigureAttribute( measureElement);
+      if (!filterOnFigure || filterOnFigure === segmentNames[segmentIdx][0]) {
+        measureElement.classList.add(highlightClass);
+        currentHighlights.push(measureElement);
+      }
     }
   }
 
@@ -204,6 +208,15 @@ function trackNextMeasure() {
       pauseTracking();
     }
   }
+}
+
+function getFigureAttribute(elem) {
+  for (const figureName of figureFilterNames) {
+    if (elem.attributes.getNamedItem(figureName)) {
+      return figureName;
+    }
+  }
+  return null;
 }
 
 function clearHighlights() {
