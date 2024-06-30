@@ -182,7 +182,7 @@ function trackNextMeasure() {
 
   for (const segmentElement of document.querySelectorAll(segmentNames[segmentIdx].join(","))) {
     for (const measureElement of segmentElement.querySelectorAll(measureNames[measureIdx].join(","))) {
-      const filterOnFigure =getFigureAttribute( measureElement);
+      const filterOnFigure = getFigureAttribute(measureElement);
       if (!filterOnFigure || filterOnFigure === segmentNames[segmentIdx][0]) {
         measureElement.classList.add(highlightClass);
         currentHighlights.push(measureElement);
