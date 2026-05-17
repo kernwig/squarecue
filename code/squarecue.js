@@ -45,9 +45,9 @@ if (defaultBpm) {
 const
   trackHtml =
     'BPM: <input id="bpm" type="number" min="64" max="256" value="' + (defaultBpm || 128) + '"/>' +
-    '<button id="runTracking" onclick="javascript: runTracking()">Track</button>' +
-    '<button id="pauseTracking" style="display: none" onclick="javascript: pauseTracking()">Pause</button>' +
-    '<button id="resetTracking" onclick="javascript: resetTracking()">Reset</button>' +
+    '<button id="runTracking" onclick="runTracking()">Track</button>' +
+    '<button id="pauseTracking" style="display: none" onclick="pauseTracking()">Pause</button>' +
+    '<button id="resetTracking" onclick="resetTracking()">Reset</button>' +
     'Run time: <span id="clock">0:00</span>';
 
 if (levelCount > 0) {
@@ -73,7 +73,7 @@ const segmentNames = [
   ["closer"],
   ["tag"]
 ];
-const figureFilterNames = ["figure1","figure2","figure3","figure4"];
+const figureFilterNames = ["figure1", "figure2", "figure3", "figure4"];
 const measureNames = [
   ["m1"],
   ["m2", "m9"],
@@ -94,7 +94,6 @@ let trackSinceTime;
 let trackAccumulatedTime = 0;
 let segmentIdx = 0;
 let measureIdx = 0;
-let clockTime = 0;
 let measureIntervalID;
 let clockIntervalID;
 let currentHighlights = [];
@@ -167,6 +166,7 @@ function resetTracking() {
   clearHighlights();
   setTrackingButtons(false);
   updateClock();
+  window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
 function setTrackingButtons(running) {
